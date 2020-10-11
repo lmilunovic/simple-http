@@ -1,8 +1,8 @@
 CC=g++
-CFLAGS=-I $(BOOST_ROOT) -pthread
+CFLAGS=-pthread -Werror -Wall -Wextra -O3
 
 release: main.cpp
-	$(CC) -o http main.cpp $(CFLAGS)
+	$(CC) -o http main.cpp server.cpp connection.cpp $(CFLAGS)
 
 clean:
 	rm http
