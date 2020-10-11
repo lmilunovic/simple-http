@@ -1,7 +1,8 @@
 #pragma once
+#include <memory>
 #include <boost/asio.hpp>
 
-class connection : std::enable_shared_from_this<connection>
+class connection : public std::enable_shared_from_this<connection>
 {
 public:
     connection(boost::asio::ip::tcp::socket socket);
